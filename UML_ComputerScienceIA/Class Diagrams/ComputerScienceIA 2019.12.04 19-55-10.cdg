@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ComputerScienceIA">
+  <ClassDiagramComponents>
+    <Class name="Boxes" package="computerscienceia" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="player" type="int" visibility="package"/>
+        <Field name="isOccupied" type="boolean" visibility="package"/>
+        <Field name="boxName" type="String" visibility="package"/>
+        <Field name="indexX" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="indexX"/>
+          <Argument type="int" name="indexY"/>
+          <Argument type="int" name="indexZ"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPlayer" returnType="int" visibility="public"/>
+        <Method name="setPlayer" returnType="void" visibility="public">
+          <Argument type="int" name="player"/>
+        </Method>
+        <Method name="isIsOccupied" returnType="boolean" visibility="public"/>
+        <Method name="setIsOccupied" returnType="void" visibility="public">
+          <Argument type="boolean" name="isOccupied"/>
+        </Method>
+        <Method name="getBoxName" returnType="String" visibility="public"/>
+        <Method name="setBoxName" returnType="void" visibility="public">
+          <Argument type="String" name="boxName"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Players" package="computerscienceia" visibility="public" xPosition="20.0" yPosition="891.0">
+      <Fields>
+        <Field name="ID" type="int" visibility="package"/>
+        <Field name="name" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="ID"/>
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="setID" returnType="void" visibility="public">
+          <Argument type="int" name="ID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Account" package="computerscienceia" visibility="public" xPosition="602.0" yPosition="20.0">
+      <Fields>
+        <Field name="username" type="String" visibility="private" isFinal="true"/>
+        <Field name="wins" type="int" visibility="private" isFinal="true"/>
+        <Field name="losses" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="username"/>
+          <Argument type="int" name="wins"/>
+          <Argument type="int" name="losses"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="getWins" returnType="int" visibility="public"/>
+        <Method name="getLosses" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="test" package="computerscienceia" visibility="public" xPosition="20.0" yPosition="1142.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Game" package="computerscienceia" visibility="public" xPosition="20.0" yPosition="337.0">
+      <Fields>
+        <Field name="b" type="Board" visibility="package"/>
+        <Field name="nowPlayer" type="Players" visibility="package"/>
+        <Field name="winner" type="Players" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Board" name="b"/>
+          <Argument type="Players" name="player1"/>
+          <Argument type="Players" name="player2"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="click" returnType="boolean" visibility="public">
+          <Argument type="Boxes" name="box"/>
+        </Method>
+        <Method name="endCheck" returnType="boolean" visibility="public">
+          <Argument type="Boxes" name="box"/>
+        </Method>
+        <Method name="checkLine" returnType="boolean" visibility="public">
+          <Argument type="Boxes" name="box"/>
+          <Argument type="Boxes" name="near1"/>
+          <Argument type="Boxes" name="near2"/>
+        </Method>
+        <Method name="isFilled" returnType="boolean" visibility="public"/>
+        <Method name="result" returnType="Players" visibility="public">
+          <Argument type="Boxes" name="box"/>
+        </Method>
+        <Method name="getB" returnType="Board" visibility="public"/>
+        <Method name="setB" returnType="void" visibility="public">
+          <Argument type="Board" name="b"/>
+        </Method>
+        <Method name="getNowPlayer" returnType="Players" visibility="public"/>
+        <Method name="setNowPlayer" returnType="void" visibility="public">
+          <Argument type="Players" name="nowPlayer"/>
+        </Method>
+        <Method name="getPlayer1" returnType="Players" visibility="public"/>
+        <Method name="setPlayer1" returnType="void" visibility="public">
+          <Argument type="Players" name="player1"/>
+        </Method>
+        <Method name="getPlayer2" returnType="Players" visibility="public"/>
+        <Method name="setPlayer2" returnType="void" visibility="public">
+          <Argument type="Players" name="player2"/>
+        </Method>
+        <Method name="getWinner" returnType="Players" visibility="public"/>
+        <Method name="setWinner" returnType="void" visibility="public">
+          <Argument type="Players" name="winner"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rotation3DIA" package="computerscienceia" visibility="public" xPosition="499.0" yPosition="337.0">
+      <Fields>
+        <Field name="WIDTH" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="HEIGHT" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="b" type="Board" visibility="package"/>
+        <Field name="g" type="Game" visibility="package"/>
+        <Field name="anchorX" type="double" visibility="private"/>
+        <Field name="anchorAngleX" type="double" visibility="private"/>
+        <Field name="anchorAngleY" type="double" visibility="private"/>
+        <Field name="angleX" type="DoubleProperty" visibility="private" isFinal="true"/>
+        <Field name="angleY" type="DoubleProperty" visibility="private" isFinal="true"/>
+        <Field name="xRotate" type="Rotate" visibility="private"/>
+        <Field name="yRotate" type="Rotate" visibility="private"/>
+        <Field name="myconObj" type="Connection" visibility="package"/>
+        <Field name="mystatObj" type="Statement" visibility="package"/>
+        <Field name="myresObj" type="ResultSet" visibility="package"/>
+        <Field name="mymeta" type="ResultSetMetaData" visibility="package"/>
+        <Field name="user1" type="boolean" visibility="package"/>
+        <Field name="boxs" type="Box[][][]" visibility="package"/>
+        <Field name="location" type="Box[][][]" visibility="package"/>
+        <Field name="group" type="SmartGroup" visibility="package"/>
+        <Field name="locationGroup" type="SmartGroup" visibility="package"/>
+        <Field name="material" type="PhongMaterial" visibility="package"/>
+        <Field name="diffuseMap1" type="PhongMaterial" visibility="package"/>
+        <Field name="diffuseMap2" type="PhongMaterial" visibility="package"/>
+        <Field name="select" type="PhongMaterial" visibility="package"/>
+        <Field name="black" type="PhongMaterial[][][]" visibility="package"/>
+        <Field name="red" type="PhongMaterial[][][]" visibility="package"/>
+        <Field name="blue" type="PhongMaterial[][][]" visibility="package"/>
+        <Field name="blackS" type="PhongMaterial[][][]" visibility="package"/>
+        <Field name="redS" type="PhongMaterial[][][]" visibility="package"/>
+        <Field name="blueS" type="PhongMaterial[][][]" visibility="package"/>
+        <Field name="lblHint" type="Label" visibility="package"/>
+        <Field name="lblUser1" type="Label" visibility="package"/>
+        <Field name="lblUser2" type="Label" visibility="package"/>
+        <Field name="lblUsername1" type="Label" visibility="package"/>
+        <Field name="lblPassword1" type="Label" visibility="package"/>
+        <Field name="lblIncorrect1" type="Label" visibility="package"/>
+        <Field name="lblUsername2" type="Label" visibility="package"/>
+        <Field name="lblPassword2" type="Label" visibility="package"/>
+        <Field name="lblIncorrect2" type="Label" visibility="package"/>
+        <Field name="lblSignup" type="Label" visibility="package"/>
+        <Field name="lblSignupUsername" type="Label" visibility="package"/>
+        <Field name="lblSignupPassword" type="Label" visibility="package"/>
+        <Field name="lblSignupConfirmPassword" type="Label" visibility="package"/>
+        <Field name="lblIncorrectS" type="Label" visibility="package"/>
+        <Field name="lblTopThree" type="Label" visibility="package"/>
+        <Field name="imaCorrect" type="Image" visibility="package"/>
+        <Field name="imageView1" type="ImageView" visibility="package"/>
+        <Field name="imageView2" type="ImageView" visibility="package"/>
+        <Field name="btnEnterLogin1" type="Button" visibility="package"/>
+        <Field name="btnEnterLogin2" type="Button" visibility="package"/>
+        <Field name="btnSignup" type="Button" visibility="package"/>
+        <Field name="btnSignupEnter" type="Button" visibility="package"/>
+        <Field name="btnSignupBack" type="Button" visibility="package"/>
+        <Field name="btnMiddleCell" type="Button" visibility="package"/>
+        <Field name="btnResult" type="Button" visibility="package"/>
+        <Field name="btnQuit" type="Button" visibility="package"/>
+        <Field name="txtUsername1" type="TextField" visibility="package"/>
+        <Field name="txtUsername2" type="TextField" visibility="package"/>
+        <Field name="txtSignupUsername" type="TextField" visibility="package"/>
+        <Field name="txtSignupPassword" type="PasswordField" visibility="package"/>
+        <Field name="txtSignupConfirmPassword" type="PasswordField" visibility="package"/>
+        <Field name="txtPassword1" type="PasswordField" visibility="package"/>
+        <Field name="txtPassword2" type="PasswordField" visibility="package"/>
+        <Field name="table" type="TableView" visibility="package"/>
+        <Field name="colRank" type="TableColumn" visibility="package"/>
+        <Field name="colUsername" type="TableColumn" visibility="package"/>
+        <Field name="colWins" type="TableColumn" visibility="package"/>
+        <Field name="colLosses" type="TableColumn" visibility="package"/>
+        <Field name="game" type="Group" visibility="package"/>
+        <Field name="login" type="Group" visibility="package"/>
+        <Field name="signup" type="Group" visibility="package"/>
+        <Field name="result" type="Group" visibility="package"/>
+        <Field name="stage" type="Stage" visibility="package"/>
+        <Field name="senLogin" type="Scene" visibility="package"/>
+        <Field name="senGame" type="Scene" visibility="package"/>
+        <Field name="senSignup" type="Scene" visibility="package"/>
+        <Field name="senResult" type="Scene" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setupScenes" returnType="void" visibility="public"/>
+        <Method name="setupGame" returnType="void" visibility="public"/>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
+        </Method>
+        <Method name="initKeyboardControl" returnType="void" visibility="private">
+          <Argument type="SmartGroup" name="group"/>
+          <Argument type="Scene" name="scene"/>
+        </Method>
+        <Method name="initMouseControl" returnType="void" visibility="private">
+          <Argument type="SmartGroup" name="group"/>
+          <Argument type="Scene" name="scene"/>
+        </Method>
+        <Method name="btnMiddleCell" returnType="void" visibility="public"/>
+        <Method name="switchScene" returnType="void" visibility="public">
+          <Argument type="Scene" name="scene"/>
+        </Method>
+        <Method name="btnEnter1" returnType="void" visibility="private"/>
+        <Method name="btnEnter2" returnType="void" visibility="private"/>
+        <Method name="setPlayers" returnType="void" visibility="public"/>
+        <Method name="btnSignupEnter" returnType="void" visibility="private">
+          <Argument type="String" name="un"/>
+          <Argument type="String" name="pw"/>
+          <Argument type="String" name="cPw"/>
+        </Method>
+        <Method name="updateDatabase" returnType="void" visibility="private"/>
+        <Method name="setTable" returnType="void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="connectWithDatabase" returnType="void" visibility="public"/>
+        <Method name="check" returnType="boolean" visibility="public">
+          <Argument type="String" name="un"/>
+          <Argument type="String" name="pw"/>
+        </Method>
+        <Method name="translateBoxes" returnType="void" visibility="public">
+          <Argument type="Box[][][]" name="boxs"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="z"/>
+        </Method>
+        <Method name="setLocationGroup" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Board" package="computerscienceia" visibility="public" xPosition="347.0" yPosition="88.0">
+      <Fields>
+        <Field name="boxes" type="Boxes[][][]" visibility="package"/>
+        <Field name="target" type="String[][][]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getBoxes" returnType="Boxes[][][]" visibility="public"/>
+        <Method name="setBoxes" returnType="void" visibility="public">
+          <Argument type="Boxes[][][]" name="boxes"/>
+        </Method>
+        <Method name="getTarget" returnType="String[][][]" visibility="public"/>
+        <Method name="setTarget" returnType="void" visibility="public">
+          <Argument type="String[][][]" name="target"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="computerscienceia.Game" target="computerscienceia.Boxes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="computerscienceia.Game" target="computerscienceia.Players" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="g" source="computerscienceia.Rotation3DIA" target="computerscienceia.Game" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="b" source="computerscienceia.Game" target="computerscienceia.Board" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="nowPlayer" source="computerscienceia.Game" target="computerscienceia.Players" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="b" source="computerscienceia.Rotation3DIA" target="computerscienceia.Board" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="computerscienceia.Game" target="computerscienceia.Board" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="winner" source="computerscienceia.Game" target="computerscienceia.Players" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="computerscienceia.Board" target="computerscienceia.Boxes" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

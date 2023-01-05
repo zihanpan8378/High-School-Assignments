@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ticket">
+  <ClassDiagramComponents>
+    <Class name="Buyer" package="Ticket" visibility="public" xPosition="7.0" yPosition="3.0">
+      <Fields>
+        <Field name="fN" type="String" visibility="package"/>
+        <Field name="postalFee" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="fN"/>
+          <Argument type="String" name="lN"/>
+          <Argument type="String" name="address"/>
+          <Argument type="double" name="postalFee"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getfN" returnType="String" visibility="public"/>
+        <Method name="setfN" returnType="void" visibility="public">
+          <Argument type="String" name="fN"/>
+        </Method>
+        <Method name="getlN" returnType="String" visibility="public"/>
+        <Method name="setlN" returnType="void" visibility="public">
+          <Argument type="String" name="lN"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="void" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getPostalFee" returnType="double" visibility="public"/>
+        <Method name="setPostalFee" returnType="void" visibility="public">
+          <Argument type="double" name="postalFee"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Purchase" package="Ticket" visibility="public" xPosition="432.0" yPosition="20.0">
+      <Fields>
+        <Field name="age" type="int" visibility="package"/>
+        <Field name="count" type="int" visibility="package"/>
+        <Field name="t" type="StudentEarlyPurchase[]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fN"/>
+          <Argument type="String" name="lN"/>
+          <Argument type="String" name="address"/>
+          <Argument type="double" name="postalFee"/>
+          <Argument type="int" name="length"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="StudentEarlyPurchase" name="a"/>
+        </Method>
+        <Method name="totalPrice" returnType="double" visibility="public">
+          <Argument type="StudentEarlyPurchase[]" name="p"/>
+        </Method>
+        <Method name="remove" returnType="void" visibility="public">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="public">
+          <Argument type="StudentEarlyPurchase[]" name="p"/>
+        </Method>
+        <Method name="printOne" returnType="void" visibility="public">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="StudentEarlyPurchase" name="s"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="testPurchase" package="Ticket" visibility="public" xPosition="795.0" yPosition="156.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StudentEarlyPurchase" package="Ticket" visibility="public" xPosition="446.0" yPosition="540.0">
+      <Fields>
+        <Field name="student" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="ticketNumber"/>
+          <Argument type="double" name="price"/>
+          <Argument type="int" name="days"/>
+          <Argument type="boolean" name="student"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="checkStudent" returnType="String" visibility="public"/>
+        <Method name="getDiscount" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="testStudentEarlyPurchase" package="Ticket" visibility="public" xPosition="795.0" yPosition="499.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EarlyPurchase" package="Ticket" visibility="public" xPosition="7.0" yPosition="481.0">
+      <Fields>
+        <Field name="days" type="int" visibility="package"/>
+        <Field name="ticketNumber" type="int" visibility="package"/>
+        <Field name="price" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="ticketNumber"/>
+          <Argument type="double" name="price"/>
+          <Argument type="int" name="days"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="setTicketNumber" returnType="void" visibility="public">
+          <Argument type="int" name="ticketNumber"/>
+        </Method>
+        <Method name="getTicketNumber" returnType="int" visibility="public"/>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="getDays" returnType="int" visibility="public"/>
+        <Method name="setDays" returnType="void" visibility="public">
+          <Argument type="int" name="days"/>
+        </Method>
+        <Method name="getDiscount" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="testEarlyPurchase" package="Ticket" visibility="public" xPosition="207.0" yPosition="668.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Ticket" package="Ticket" visibility="public" xPosition="7.0" yPosition="311.0">
+      <Methods>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="setTicketNumber" returnType="void" visibility="public">
+          <Argument type="int" name="ticketNumber"/>
+        </Method>
+        <Method name="getTicketNumber" returnType="int" visibility="public"/>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Ticket.Purchase" target="Ticket.Buyer"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Ticket.EarlyPurchase" target="Ticket.Ticket"/>
+    <IsRelation name="is" source="Ticket.StudentEarlyPurchase" target="Ticket.EarlyPurchase"/>
+    <HasRelation name="t" source="Ticket.Purchase" target="Ticket.StudentEarlyPurchase" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

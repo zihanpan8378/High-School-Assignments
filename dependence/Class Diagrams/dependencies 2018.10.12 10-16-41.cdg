@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="dependencies">
+  <ClassDiagramComponents>
+    <Class name="CourseGrade" package="dependencies" visibility="public" xPosition="11.0" yPosition="544.0">
+      <Fields>
+        <Field name="course" type="Course" visibility="package"/>
+        <Field name="grade" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Course" name="course"/>
+          <Argument type="double" name="grade"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCourse" returnType="Course" visibility="public"/>
+        <Method name="setCourse" returnType="void" visibility="public">
+          <Argument type="Course" name="course"/>
+        </Method>
+        <Method name="getGrade" returnType="double" visibility="public"/>
+        <Method name="setGrade" returnType="void" visibility="public">
+          <Argument type="double" name="grade"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Person" package="dependencies" visibility="public" xPosition="645.0" yPosition="190.0">
+      <Fields>
+        <Field name="fName" type="String" visibility="public"/>
+        <Field name="y" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fName"/>
+          <Argument type="String" name="lName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setBirthday" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="m"/>
+          <Argument type="int" name="d"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="getfName" returnType="String" visibility="public"/>
+        <Method name="setfName" returnType="void" visibility="public">
+          <Argument type="String" name="fName"/>
+        </Method>
+        <Method name="getlName" returnType="String" visibility="public"/>
+        <Method name="setlName" returnType="void" visibility="public">
+          <Argument type="String" name="lName"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="testPerson" package="dependencies" visibility="public" xPosition="297.0" yPosition="74.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Course" package="dependencies" visibility="public" xPosition="223.0" yPosition="228.0">
+      <Fields>
+        <Field name="courseName" type="String" visibility="package"/>
+        <Field name="courseID" type="String" visibility="package"/>
+        <Field name="credits" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="courseName"/>
+          <Argument type="String" name="courseID"/>
+          <Argument type="int" name="credits"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCourseName" returnType="String" visibility="public"/>
+        <Method name="setCourseName" returnType="void" visibility="public">
+          <Argument type="String" name="courseName"/>
+        </Method>
+        <Method name="getCourseID" returnType="String" visibility="public"/>
+        <Method name="setCourseID" returnType="void" visibility="public">
+          <Argument type="String" name="courseID"/>
+        </Method>
+        <Method name="getCredits" returnType="int" visibility="public"/>
+        <Method name="setCredits" returnType="void" visibility="public">
+          <Argument type="int" name="credits"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Student" package="dependencies" visibility="public" xPosition="422.0" yPosition="629.0">
+      <Fields>
+        <Field name="courses" type="CourseGrade[]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fName"/>
+          <Argument type="String" name="lName"/>
+          <Argument type="CourseGrade[]" name="cg"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Dependencies" package="dependencies" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Birthday" package="dependencies" visibility="public" xPosition="746.0" yPosition="517.0">
+      <Methods>
+        <Method name="setBirthday" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="m"/>
+          <Argument type="int" name="d"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="courses" source="dependencies.Student" target="dependencies.CourseGrade" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="dependencies.Person" target="dependencies.Birthday"/>
+    <UseRelation source="dependencies.CourseGrade" target="dependencies.Course" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="dependencies.Student" target="dependencies.Person"/>
+    <HasRelation name="course" source="dependencies.CourseGrade" target="dependencies.Course" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
